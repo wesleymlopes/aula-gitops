@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/wesleymlopes/aula-gitops.git
+    targetRevision: HEAD
+   # directory:
+     # recurse: true
+    path: argocd
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  info:
+    - name: "app"
+      value: "argocd"
+    - name: "team"
+      value: "devops"
+    - name: Projeto
+      value: "projeto argocd curso devopspro"

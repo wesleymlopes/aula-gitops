@@ -8,8 +8,8 @@ spec:
   source:
     repoURL: https://github.com/wesleymlopes/aula-gitops.git
     targetRevision: HEAD
-    directory:
-      recurse: true
+    #directory:
+      #recurse: true
     path: argocd
   destination:
     server: https://kubernetes.default.svc
